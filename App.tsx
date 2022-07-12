@@ -1,14 +1,13 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Container from './src/components/Container';
-import OnboardingView from './src/components/OnboardingView';
 import CustomText from './src/components/CustomText';
+import OnboardingSwipe from './src/components/OboardingSwipe';
 
 export default function App() {
   return (
     <View style={styles.container}>
-        <CustomText type="text">Cool Places</CustomText>
+        <OnboardingSwipe />
         <StatusBar style="auto" />
     </View>
   );
@@ -17,7 +16,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
+    // justifyContent: 'center',
+    // alignItems: 'center'
   },
 });

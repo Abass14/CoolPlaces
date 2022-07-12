@@ -4,7 +4,7 @@ import { StyleProp, Text, TextStyle, TouchableOpacity, View } from "react-native
 interface CustomTextProps {
     children: string,
     style?: StyleProp<TextStyle>,
-    type: "text" | "hyperlink",
+    type?: "text" | "hyperlink",
     onPress?: () => void
 }
 const CustomText: React.FC<CustomTextProps> = ({children, style, type="text", onPress}) : JSX.Element => {
