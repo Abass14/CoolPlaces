@@ -1,24 +1,22 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Container from './src/components/Container';
+import CustomText from './src/components/CustomText';
+import OnboardingSwipe from './src/components/OboardingSwipe';
 
 export default function App() {
   return (
-    <Container style={{backgroundColor: 'white'}}>
-      <View>
-        <Text>Change</Text>
+    <View style={styles.container}>
+        <OnboardingSwipe />
         <StatusBar style="auto" />
-      </View>
-    </Container>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // justifyContent: 'center',
+    // alignItems: 'center'
   },
 });
