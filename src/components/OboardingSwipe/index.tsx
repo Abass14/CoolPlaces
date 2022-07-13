@@ -13,7 +13,10 @@ type ViewItems = {
     viewableItems: Array<ViewToken>,
     changed?: Array<ViewToken>
 }
-const OnboardingSwipe = (): JSX.Element => {
+type OnboardingSwipeProps = {
+    navigate: () => void
+}
+const OnboardingSwipe: React.FC<OnboardingSwipeProps> = ({navigate}): JSX.Element => {
 
     const { height, width } = useWindowDimensions();
     const scrollX = useRef(new Animated.Value(0)).current //horizonatl scroll position
@@ -40,7 +43,7 @@ const OnboardingSwipe = (): JSX.Element => {
 
     const scrollTo = () => {
         if (currentViewedIndex!! > 1) {
-            console.log("last item")
+            navigate();
         } else {
             slideRef.current?.scrollToIndex({ index: currentViewedIndex!! + 1 })
         }
