@@ -1,0 +1,23 @@
+
+export const CHATS_SCREEN = 'CHAT_SCREEN'
+export const CHAT_STACK = "CHAT_STACK"
+export const DRAWER = "DRAWER"
+export const DRAWER_STACK = "DRAWER_STACK"
+export const EDIT_PROFILE = "EDIT_PROFILE"
+export const FAVORITES_SCREEN = "FAVORITES_SCREEN"
+export const FAVORITES_STACK = "FAVORITES_STACK"
+export const FOLLOWERS = "FOLLOWERS"
+export const HOME_STACK = "HOME_STACK"
+export const ONBOARDING = "ONBOARDING"
+export const AUTH_STACK = "AUTH_STACK"
+export const LOGIN_SCREEN = "LOGIN_SCREEN"
+export const SIGNUP_SCREEN = "SIGNUP_SCREEN"
+export const FORGOT_PASSWORD = "FORGOT_PASSWORD"
+export const RESET_PASSWORD = "RESET_PASSWORD"
+export const POST_DETAILS = "POST_DETAILS"
+export const POST_UPLOAD = "POST_UPLOAD"
+export const PROFILE = "PROFILE"
+export const PROFILE_STACK = "PROFILE_STACK"
+export const SEARCH = "SEARCH"
+export const SEARCH_STACK = "SEARCH_STACK"
+export const HOME_SCREEN = 'HOME_SCREEN'

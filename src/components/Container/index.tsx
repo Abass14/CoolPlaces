@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleProp, Text, View, ViewStyle } from "react-native";
+import { KeyboardAvoidingView, StyleProp, Text, View, ViewStyle } from "react-native";
 import { styles } from "./styles";
 
 interface ContainerProps {
@@ -9,9 +9,9 @@ interface ContainerProps {
 
 const Container: React.FC<ContainerProps> = ({children, style}) : JSX.Element => {
     return (
-        <View style={[styles.container, style]}>
+        <KeyboardAvoidingView behavior="padding" style={[styles.container, style]}>
             <>{children}</>
-        </View>
+        </KeyboardAvoidingView>
     )
 }
 
