@@ -2,7 +2,7 @@ import React from "react";
 import { StyleProp, Text, TextStyle, TouchableOpacity, View } from "react-native";
 
 interface CustomTextProps {
-    children: string,
+    children: string | React.ReactNode,
     style?: StyleProp<TextStyle>,
     type?: "text" | "hyperlink",
     onPress?: () => void

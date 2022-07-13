@@ -4,7 +4,7 @@ import { Icon } from "react-native-elements";
 import { colors } from "../../assets/colors";
 
 type IconViewProps = {
-    type?: string,
+    type?: "font-awesome" | "material" | "material-community",
     name: string,
     size?: number,
     style?: ViewStyle,
