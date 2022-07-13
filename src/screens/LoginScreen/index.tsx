@@ -7,7 +7,9 @@ import Loader from "../../components/RoundLoader";
 const LoginScreen = () : JSX.Element => {
     return (
         <Container>
-            <Text>LoginScreen</Text>
+            <View>
+                
+            </View>
         </Container>
     )
 }

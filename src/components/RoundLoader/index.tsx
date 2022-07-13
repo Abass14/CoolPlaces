@@ -17,6 +17,10 @@ const Loader: React.FC<LoaderProps> = ({ color = colors.blue, size = "large", ty
     const fadeInOne = useRef(new Animated.Value(0)).current
     const fadeInTwo = useRef(new Animated.Value(0)).current
     const fadeInThree = useRef(new Animated.Value(0)).current
+    const interpolate = {
+        inputRange: [0, 100],
+        outputRange: [0, 1]
+    }
 
     useEffect(() => {
         Animated.loop(
@@ -48,26 +52,17 @@ const Loader: React.FC<LoaderProps> = ({ color = colors.blue, size = "large", ty
                 <View style={[styles.square_dots, view_style]}>
                     <Animated.View
                         style={[styles.dots, dots_style, {
-                            opacity: fadeInOne.interpolate({
-                                inputRange: [0, 100],
-                                outputRange: [0, 1]
-                            })
+                            opacity: fadeInOne.interpolate(interpolate)
                         }]}
                     />
                     <Animated.View
                         style={[styles.dots, dots_style, {
-                            opacity: fadeInTwo.interpolate({
-                                inputRange: [0, 100],
-                                outputRange: [0, 1]
-                            })
+                            opacity: fadeInTwo.interpolate(interpolate)
                         }]}
                     />
                     <Animated.View
                         style={[styles.dots, dots_style, {
-                            opacity: fadeInThree.interpolate({
-                                inputRange: [0, 100],
-                                outputRange: [0, 1]
-                            })
+                            opacity: fadeInThree.interpolate(interpolate)
                         }]}
                     />
 

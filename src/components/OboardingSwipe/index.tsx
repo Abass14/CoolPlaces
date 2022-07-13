@@ -16,7 +16,7 @@ type ViewItems = {
 type OnboardingSwipeProps = {
     navigate: () => void
 }
-const OnboardingSwipe: React.FC<OnboardingSwipeProps> = ({navigate}): JSX.Element => {
+const OnboardingSwipe: React.FC<OnboardingSwipeProps> = ({ navigate }): JSX.Element => {
 
     const { height, width } = useWindowDimensions();
     const scrollX = useRef(new Animated.Value(0)).current //horizonatl scroll position
@@ -41,13 +41,18 @@ const OnboardingSwipe: React.FC<OnboardingSwipeProps> = ({navigate}): JSX.Elemen
         )
     }
 
-    const scrollTo = () => {
+    const scrollTo = (skip?: string) => {
+        if (skip === "skip") {
+            navigate();
+            return
+        }
         if (currentViewedIndex!! > 1) {
             navigate();
         } else {
             slideRef.current?.scrollToIndex({ index: currentViewedIndex!! + 1 })
         }
     }
+
     return (
         <View style={styles.container}>
             <FlatList
@@ -76,7 +81,13 @@ const OnboardingSwipe: React.FC<OnboardingSwipeProps> = ({navigate}): JSX.Elemen
             ) : (
                 <View style={styles.buttonView}>
                     <View>
-                        <CustomText style={{ fontSize: 20, color: colors.deep_purple }} type="text">{`${currentItem?.buttonText}`}</CustomText>
+                        <CustomText
+                            onPress={() => scrollTo("skip")}
+                            style={{ fontSize: 20, color: colors.deep_purple }}
+                            type="hyperlink"
+                        >
+                            {`${currentItem?.buttonText}`}
+                        </CustomText>
                     </View>
                     <View>
                         <Button
